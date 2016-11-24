@@ -1,0 +1,35 @@
+[
+	{
+		"id": "1",
+	 	"nome": "A piada mortal",
+	 	"tipo": "HQ",
+        "preco": "25,90",
+        "quantidade": "5",
+        "promocao": false,
+        "status" : {
+            "code" : 0
+        }
+	},
+	{
+		"id": "2",
+	 	"nome": "Gotham a noite",
+	 	"tipo": "QUADRO",
+        "preco": "50,00",
+        "quantidade": "2",
+        "promocao": false,
+        "status" : {
+            "code" : 0
+        }
+	},
+	{
+		"id": "3",
+	 	"nome": "Pequena Gotham",
+	 	"tipo": "HQ",
+        "preco": "19,90",
+        "quantidade": "1",
+        "promocao": true,
+        "status" : {
+            "code" : 0
+        }
+	}
+]
