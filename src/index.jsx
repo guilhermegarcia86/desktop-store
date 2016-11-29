@@ -8,6 +8,16 @@ import appStore from '../src/reducers/store'
 import Layout from '../src/components/layout/layout'
 import ItemCadastro from '../src/components/item-cadastro'
 import Itens from '../src/components/itens'
+import * as firebase from 'firebase'
+
+const config = {
+    apiKey: "AIzaSyAF-QAMAs8T1fbev9IkazyUwCpPfbOji1A",
+    authDomain: "desktopstore-fb427.firebaseapp.com",
+    databaseURL: "https://desktopstore-fb427.firebaseio.com",
+    storageBucket: "desktopstore-fb427.appspot.com",
+    messagingSenderId: "781011874691"
+  }
+firebase.initializeApp(config)
 
 const routes = (
   <Route>

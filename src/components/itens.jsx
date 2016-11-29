@@ -69,10 +69,10 @@ let Itens = React.createClass({
   onRowClick(id) {
     console.log('onRowClick')
     if (id) {
-      const { dogs } = this.props
-      const dog = _.find(dgos, {'id': parseInt(id, 10)})
+      const { itens } = this.props
+      const item = _.find(itens, {'id': parseInt(id, 10)})
 
-      this.onEdit(dog)
+      this.onEdit(item)
     }
   },
 
@@ -83,20 +83,19 @@ let Itens = React.createClass({
   render(){
 
     const { action } = this.state
-    const { dog, dogs } = this.props
+    const { item, itens } = this.props
 
     switch (action) {
       case 'UPDATE':
       case 'CREATE': return (
-        <Form model={dog}
-              initialValues={dog}
+        <Form initialValues={item}
               onSave={this.onSave}
               onCancel={this.onFormCancel}
               onDelete={this.onDelete}
               action={action}/>
       )
       default: return (
-        <Grid model={dogs}
+        <Grid model={itens}
               onAdd={this.onAdd}
               onCancel={this.onCancel}
               onRowClick={this.onRowClick}/>
@@ -109,7 +108,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ apiGetItens, apiDeleteItem, selectItem }, dispatch);
 }
 
-function mapStateToProps({ dogs }) {
-  return { dogs };
+function mapStateToProps({ itens }) {
+  return { itens };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Itens);

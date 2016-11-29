@@ -18,7 +18,7 @@ const ItemCadastro = React.createClass({
 })
 
 function mapDispatchToProps(dispatch) {
-  let actions = { apiAddDog }
+  let actions = { apiAddItem }
   return bindActionCreators(actions, dispatch)
 }
 

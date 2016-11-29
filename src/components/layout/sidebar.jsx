@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
+import Link from 'react-router'
 
 class Sidebar extends Component {
 
@@ -32,7 +33,7 @@ class Sidebar extends Component {
 
             <li>
               <a href="" >
-                <i className="fa fa-dashboard fa-fw" /> &nbsp;Dashboard
+                <i className="fa fa-dashboard fa-fw" /> &nbsp;Início
               </a>
             </li>
 
@@ -52,6 +53,31 @@ class Sidebar extends Component {
               <a href=""  >
                 <i className="fa fa-table fa-fw" /> &nbsp;Charts
               </a>
+            </li>
+
+             <li className={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
+              <a
+                href=""
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({
+                    multiLevelDropdownCollapsed: !this.state.multiLevelDropdownCollapsed,
+                  });
+                  return false;
+                }} >
+                <i className="fa fa-sitemap fa-fw" />
+                &nbsp;Vendas
+                <span className="fa arrow" />
+              </a>
+              <ul
+                className={
+                  classNames({
+                    'nav nav-second-level': true, collapse: this.state.multiLevelDropdownCollapsed,
+                  })}>
+                <li>
+                  <a href="" onClick={(e) => { e.preventDefault(); }}>Relatório</a>
+                </li>
+              </ul>
             </li>
 
           </ul>

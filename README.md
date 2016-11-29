@@ -21,7 +21,7 @@ npm start
 
 ##
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
-Learn more about React [documentation](https://facebook.github.io/react/docs/hello-world.html).
-Learn more about Redux [documentation](http://redux.js.org/).
+Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).<br>
+Learn more about React [documentation](https://facebook.github.io/react/docs/hello-world.html).<br>
+Learn more about Redux [documentation](http://redux.js.org/).<br>
 Learn more about ReduxForm [documentation](https://github.com/erikras/redux-form).

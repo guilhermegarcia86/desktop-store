@@ -60,10 +60,10 @@ const GridItems = ({items}) => {
   )
 }
 
-let DogGrid = ({ model }) => {
+let ItemGrid = ({ model }) => {
 
   return (
-    <Ibox title='Dogs' hasFooter={false}>
+    <Ibox title='Itens' hasFooter={false}>
       <section id="conteudo-grid">
         <div className="container">
             <div className="panel">
@@ -88,4 +88,4 @@ let DogGrid = ({ model }) => {
   )
 }
 
-export default DogGrid;
+export default ItemGrid;
