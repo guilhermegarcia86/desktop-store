@@ -12,7 +12,7 @@ import Form from './item-form'
 let Itens = React.createClass({
 
   getInitialState() {
-    return { action: 'LIST' }
+    return { action: 'CREATE' }
   },
 
   componentDidMount() {

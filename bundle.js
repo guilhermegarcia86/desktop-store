@@ -55781,7 +55781,6 @@
 	var Layout = _react2.default.createClass({
 	    displayName: 'Layout',
 	    render: function render() {
-	        console.log('layout');
 	        return _react2.default.createElement(
 	            'div',
 	            null,
@@ -74062,7 +74061,7 @@
 	var Itens = _react2.default.createClass({
 	  displayName: 'Itens',
 	  getInitialState: function getInitialState() {
-	    return { action: 'LIST' };
+	    return { action: 'CREATE' };
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.refreshItems();
@@ -76313,9 +76312,127 @@
 
 /***/ },
 /* 736 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reduxForm = __webpack_require__(318);
+
+	var _uiUtil = __webpack_require__(733);
+
+	var _selectInput = __webpack_require__(743);
+
+	var _selectInput2 = _interopRequireDefault(_selectInput);
+
+	var _textInput = __webpack_require__(744);
+
+	var _textInput2 = _interopRequireDefault(_textInput);
+
+	var _staticOptions = __webpack_require__(745);
+
+	var _validation = __webpack_require__(746);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ItemForm = _react2.default.createClass({
+	    displayName: 'ItemForm',
+	    getInitialState: function getInitialState() {
+	        return { tipos: [] };
+	    },
+	    componentDidMount: function componentDidMount() {
+	        var tipos = _staticOptions.TIPOS_PRODUTOS.map(function (item, idx) {
+	            return _react2.default.createElement(
+	                'option',
+	                { key: idx + 1, value: item },
+	                item
+	            );
+	        });
+	        tipos.unshift(_react2.default.createElement(
+	            'option',
+	            { key: 0, value: '' },
+	            'Selecionar'
+	        ));
+	        this.setState({ tipos: tipos });
+	    },
+	    onCancel: function onCancel(e) {
+	        e.preventDefault();
+	        this.props.onCancel();
+	    },
+	    submit: function submit(values, dispatch) {
+	        if (values.idGrupoEmpresa) values.idsGruposEmpresas.push(values.idGrupoEmpresa);
+	        return this.props.onSave(values);
+	    },
+	    renderForm: function renderForm() {
+	        var _props$fields = this.props.fields,
+	            nome = _props$fields.nome,
+	            preco = _props$fields.preco,
+	            quantidade = _props$fields.quantidade,
+	            tipo = _props$fields.tipo;
+
+
+	        return _react2.default.createElement(
+	            'fieldset',
+	            null,
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'row' },
+	                _react2.default.createElement(_textInput2.default, { field: nome, label: 'Nome', col: 10, required: true }),
+	                _react2.default.createElement(
+	                    _selectInput2.default,
+	                    { field: tipo, label: 'Tipo', col: 4, required: true },
+	                    this.state.tipos
+	                ),
+	                _react2.default.createElement(_textInput2.default, { field: preco, label: 'Pre\xE7o', col: 10, required: true }),
+	                _react2.default.createElement(_textInput2.default, { field: quantidade, label: 'Quantidade', col: 4, maxLength: '50', required: true })
+	            )
+	        );
+	    },
+	    render: function render() {
+	        var _props = this.props,
+	            handleSubmit = _props.handleSubmit,
+	            acao = _props.acao;
+
+	        return _react2.default.createElement(
+	            'form',
+	            { onSubmit: handleSubmit(this.submit), className: 'smart-form', noValidate: 'novalidate' },
+	            _react2.default.createElement(
+	                'header',
+	                null,
+	                'Usu\xE1rio'
+	            ),
+	            this.renderForm(),
+	            _react2.default.createElement(
+	                'footer',
+	                null,
+	                _react2.default.createElement(_uiUtil.CancelButton, { onCancel: this.onCancel }),
+	                _react2.default.createElement(_uiUtil.SubmitButton, { className: 'pull-right' })
+	            )
+	        );
+	    }
+	});
+
+	var fields = ['nome', 'preco', 'quantidade', 'tipo'];
+
+	var validate = function validate(values) {
+	    var errors = {};
+	    errors = (0, _validation.requiredFields)({ names: ['quantidade', 'preco', 'nome'] })(values);
+
+	    return errors;
+	};
+
+	exports.default = (0, _reduxForm.reduxForm)({
+	    form: 'ItemForm',
+	    fields: fields,
+	    validate: validate
+	})(ItemForm);
 
 /***/ },
 /* 737 */
@@ -76959,6 +77076,255 @@
 	var X=function(a){"serviceWorker"in navigator&&navigator.serviceWorker.addEventListener("message",function(b){if(b.data&&b.data[t.m])switch(b=b.data,b[t.m]){case u.N:case u.H:a.Y.next(b[t.u])}},!1)};if(!(firebase&&firebase.INTERNAL&&firebase.INTERNAL.registerService))throw Error("Cannot install Firebase Messaging - be sure to load firebase-app.js first.");firebase.INTERNAL.registerService("messaging",function(a){return self&&"ServiceWorkerGlobalScope"in self?new S(a):new Y(a)},{Messaging:Y});})();
 	module.exports = firebase.messaging;
 
+
+/***/ },
+/* 743 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends2 = __webpack_require__(504);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(543);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _uiUtil = __webpack_require__(733);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SelectInput = _react2.default.createClass({
+	  displayName: 'SelectInput',
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      col: 8,
+	      required: false,
+	      disabled: false
+	    };
+	  },
+	  handleSelectChange: function handleSelectChange(e) {
+	    var field = this.props.field;
+
+	    field.onChange(e);
+
+	    if (this.props.onSelectChange) {
+	      this.props.onSelectChange(e, field.valid);
+	    }
+	  },
+	  handleMouseEvent: function handleMouseEvent(e) {
+	    var tooltip = this.refs.tooltip;
+
+	    if (tooltip) {
+	      if (e.type === 'mouseover') {
+	        tooltip.className += " active";
+	      } else if (e.type === 'mouseleave') {
+	        tooltip.className = tooltip.className.replace(" active", "");
+	      }
+	    }
+	  },
+	  render: function render() {
+	    var _props = this.props,
+	        field = _props.field,
+	        _props$field = _props.field,
+	        valid = _props$field.valid,
+	        touched = _props$field.touched,
+	        disabled = _props.disabled,
+	        rest = (0, _objectWithoutProperties3.default)(_props, ['field', 'field', 'disabled']);
+
+	    var invalido = !valid && touched;
+
+	    var toolTip = invalido ? _react2.default.createElement(
+	      'b',
+	      { ref: 'tooltip', className: 'tooltip tooltip-top-right' },
+	      field.error
+	    ) : null;
+
+	    return _react2.default.createElement(
+	      'section',
+	      { className: 'col col-' + this.props.col },
+	      _react2.default.createElement(
+	        'label',
+	        {
+	          className: 'select' + (invalido ? ' state-error' : '') + (disabled ? ' state-disabled' : ''),
+	          onMouseOver: this.handleMouseEvent,
+	          onMouseLeave: this.handleMouseEvent },
+	        _react2.default.createElement(
+	          'select',
+	          (0, _extends3.default)({
+	            disabled: this.props.disabled
+	          }, field, rest, {
+	            value: field.value || '',
+	            onChange: this.handleSelectChange }),
+	          this.props.children
+	        ),
+	        ' ',
+	        _react2.default.createElement('i', null),
+	        toolTip
+	      ),
+	      _react2.default.createElement(_uiUtil.Note, { text: this.props.label, required: this.props.required })
+	    );
+	  }
+	});
+
+	SelectInput.propTypes = {
+	  col: _react.PropTypes.number,
+	  required: _react.PropTypes.bool,
+	  disabled: _react.PropTypes.bool,
+	  label: _react.PropTypes.string.isRequired,
+	  field: _react.PropTypes.object.isRequired
+	};
+
+	exports.default = SelectInput;
+
+/***/ },
+/* 744 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends2 = __webpack_require__(504);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(543);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _uiUtil = __webpack_require__(733);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TextInput = _react2.default.createClass({
+	  displayName: 'TextInput',
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      col: 8,
+	      required: false,
+	      maxLength: 40,
+	      disabled: false,
+	      label: null
+	    };
+	  },
+	  handleTextBlur: function handleTextBlur(e) {
+	    var field = this.props.field;
+
+	    field.onBlur(e);
+
+	    if (field.valid && this.props.onTextBlur) {
+	      this.props.onTextBlur(e);
+	    }
+	  },
+	  render: function render() {
+	    var _props = this.props,
+	        label = _props.label,
+	        field = _props.field,
+	        _props$field = _props.field,
+	        valid = _props$field.valid,
+	        touched = _props$field.touched,
+	        disabled = _props.disabled,
+	        rest = (0, _objectWithoutProperties3.default)(_props, ['label', 'field', 'field', 'disabled']);
+
+	    var invalido = !valid && touched;
+
+	    var toolTip = invalido ? _react2.default.createElement(
+	      'b',
+	      { className: 'tooltip tooltip-top-right' },
+	      field.error
+	    ) : null;
+	    var icone = invalido ? _react2.default.createElement('i', { className: 'icon-append fa fa-warning' }) : null;
+
+	    return _react2.default.createElement(
+	      'section',
+	      { className: 'col col-' + this.props.col },
+	      _react2.default.createElement(
+	        'label',
+	        { 'data-forcedisabled': !!disabled, className: 'input' + (invalido ? ' state-error' : '') + (disabled ? ' state-disabled' : '') },
+	        icone,
+	        _react2.default.createElement('input', (0, _extends3.default)({}, field, rest, {
+	          type: 'text',
+	          placeholder: label,
+	          maxLength: this.props.maxLength,
+	          'data-forcedisabled': !!disabled,
+	          disabled: this.props.disabled,
+	          onBlur: this.handleTextBlur })),
+	        toolTip
+	      ),
+	      label && _react2.default.createElement(_uiUtil.Note, { text: label, required: this.props.required })
+	    );
+	  }
+	});
+
+	TextInput.propTypes = {
+	  field: _react.PropTypes.object.isRequired
+	};
+
+	exports.default = TextInput;
+
+/***/ },
+/* 745 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var TIPOS_PRODUTOS = exports.TIPOS_PRODUTOS = ['HQ', 'QUADRO', 'POSTER'];
+
+/***/ },
+/* 746 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var requiredFields = exports.requiredFields = function requiredFields(_ref) {
+	    var names = _ref.names,
+	        message = _ref.message;
+	    return function (data) {
+	        return names.reduce(function (errors, name) {
+	            if (!data[name]) {
+	                errors[name] = message || 'Preenchimento obrigatório';
+	            }
+	            return errors;
+	        }, {});
+	    };
+	};
+
+	/**
+	 * Verifica se uma String está no formato MM/AAAA e se é um mês ano válido.
+	 * Exemplos de mês/ano válidos: 12/2016, 01/2000, 05/1990.
+	 * Exemplos de mês/ano inválidos: 13/2016 (mês inválido), aa/mmmm (contém alfa)
+	 * 12/0133 (ano inválido), 01/3022 (ano inválido, muito no futuro)
+	 *
+	 * @param {number} mesAno string contendo o mês/ano a ser validado
+	 * @return {boolean}
+	 */
+	var validaMesAno = exports.validaMesAno = function validaMesAno(mesAno) {
+	    var regex = /^(0[1-9]|1[0-2])\/[1-2]\d{3}$/;
+
+	    return regex.test(mesAno);
+	};
 
 /***/ }
 /******/ ]);

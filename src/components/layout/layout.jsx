@@ -5,7 +5,6 @@ import Header from './header'
 const Layout = React.createClass({    
 
     render(){
-        console.log('layout')
         return(
             <div>
             <Header/>
