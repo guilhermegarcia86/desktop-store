@@ -1,5 +1,5 @@
 import React from 'react'
-import { reduxForm } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 import { CancelButton, SubmitButton } from './utils/ui-util'
 import SelectInput from './formulario-utils/select-input'
 import TextInput from './formulario-utils/text-input'
@@ -31,6 +31,7 @@ const ItemForm = React.createClass({
     },
 
     renderForm() {
+        console.log('ItemForm')
         let { fields: { nome, preco, quantidade, tipo } } = this.props
 
         return(

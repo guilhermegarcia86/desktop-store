@@ -1,5 +1,6 @@
 const path = require('path')
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
+  , BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports={
   entry:'./src/index.jsx',
@@ -32,5 +33,12 @@ module.exports={
 	},
   eslint: {
 		configFile: '.eslintrc'
-	}
+	},
+  plugins: [
+    new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            server: { baseDir: "./" }
+        }, { reload: true })
+  ]
 }

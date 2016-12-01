@@ -23,6 +23,7 @@ const TextInput = React.createClass({
   },
 
   render() {
+    console.log('textinput')
     const { label, field, field : { valid, touched }, disabled, ...rest } = this.props;
     const invalido = !valid && touched
 
