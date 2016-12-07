@@ -33,7 +33,7 @@ const SelectInput = React.createClass({
   },
 
   render() {
-    const { field, field : { valid, touched }, disabled, ...rest } = this.props;
+    const { field, field : { valid, touched }, disabled } = this.props;
     const invalido = !valid && touched
 
     let toolTip = invalido ? <b ref="tooltip" className='tooltip tooltip-top-right'>{field.error}</b> : null
@@ -46,8 +46,7 @@ const SelectInput = React.createClass({
             onMouseLeave={this.handleMouseEvent}>
           <select
             disabled={this.props.disabled}
-            {...field}
-            {...rest}
+            {...field.select}
             value={field.value || ''}
             onChange={this.handleSelectChange}>
             {this.props.children}

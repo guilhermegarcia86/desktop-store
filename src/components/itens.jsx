@@ -12,7 +12,7 @@ import Form from './item-form'
 let Itens = React.createClass({
 
   getInitialState() {
-    return { action: 'CREATE' }
+    return { action: 'LIST', item: {} }
   },
 
   componentDidMount() {
@@ -24,8 +24,7 @@ let Itens = React.createClass({
   },
 
   onAdd() {
-    this.props.selectItem({})
-    this.setState({ action: 'CREATE' })
+    this.setState({ action: 'CREATE', item: {} })
   },
 
   onEdit(item) {
@@ -82,8 +81,10 @@ let Itens = React.createClass({
 
   render(){
 
-    const { action } = this.state
-    const { item, itens } = this.props
+    console.log('itens - render')
+
+    const { action, item } = this.state
+    const { itens } = this.props
 
     switch (action) {
       case 'UPDATE':

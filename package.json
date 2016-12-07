@@ -56,9 +56,9 @@
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
     "reactfire": "^1.0.0",
-    "redux": "^3.6.0",
-    "redux-action-helper": "^1.1.1",
-    "redux-form": "^6.2.0",
+    "redux": "^3.3.1",
+    "redux-action-helper": "1.0.8",
+    "redux-form": "^5.2.4",
     "sizzle": "^2.3.3"
   }
 }

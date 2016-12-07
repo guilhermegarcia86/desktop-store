@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import { Row, Column, Ibox } from './utils/ui-util'
+import { Row, Column, Ibox, PrimaryButton } from './utils/ui-util'
 
 const displayNone = {'display': 'none'}
 
@@ -60,30 +60,39 @@ const GridItems = ({items}) => {
   )
 }
 
-let ItemGrid = ({ model }) => {
+let ItemGrid = (props) => {
 
   return (
     <Ibox title='Itens' hasFooter={false}>
-      <section id="conteudo-grid">
-        <div className="container">
-            <div className="panel">
-                <div className="">
-                  <table id="table-grid" className="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th className="text-center col-md-2">Nome</th>
-                        <th className="text-center col-md-2">Tipo</th>
-                        <th className="text-center col-md-2">Preço</th>
-                        <th className="text-center col-md-2">Quantidade</th>
-                        <th className="text-center col-md-1"></th>
-                      </tr>
-                    </thead>
-                    <GridItems items={model} />
-                  </table>
-              </div>
+      <fieldset>
+        <div className="row">
+          <section id="conteudo-grid">
+            <div className="container">
+                <div className="panel">
+                    <div className="">
+                      <table id="table-grid" className="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th className="text-center col-md-2">Nome</th>
+                            <th className="text-center col-md-2">Tipo</th>
+                            <th className="text-center col-md-2">Preço</th>
+                            <th className="text-center col-md-2">Quantidade</th>
+                            <th className="text-center col-md-1"></th>
+                          </tr>
+                        </thead>
+                        <GridItems items={props.model} />
+                      </table>
+                  </div>
+                </div>
             </div>
+          </section>
         </div>
-      </section>
+      </fieldset>
+      <footer className="form-footer">
+        <PrimaryButton className='pull-right'
+                       label='Incluir'
+                       onClick={props.onAdd}/>
+      </footer>
     </Ibox>
   )
 }

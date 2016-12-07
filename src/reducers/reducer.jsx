@@ -5,6 +5,13 @@ import _ from 'lodash'
 import MenuItem from '../components/layout/navigation/stores/menu-item'
 import MenuItemsData from '../components/layout/navigation/stores/menu-itens.js'
 
+const item = (state = {}, action) => {
+  switch(action.type){
+    case Actions.GET_ITEM: return action.payload
+    default: return state
+  }
+}
+
 const itens = (state = [], action) => {
   switch (action.type) {
     case Actions.GET_ITENS: return action.payload
@@ -26,5 +33,7 @@ const menuItems = (state=[], action) => {
 
 export default combineReducers({
   itens,
-  menuItems
+  item,
+  menuItems,
+  form: formReducer
 })

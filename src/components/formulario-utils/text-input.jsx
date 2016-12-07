@@ -24,7 +24,7 @@ const TextInput = React.createClass({
 
   render() {
     console.log('textinput')
-    const { label, field, field : { valid, touched }, disabled, ...rest } = this.props;
+    const { label, field, field : { valid, touched }, disabled } = this.props;
     const invalido = !valid && touched
 
     let toolTip = invalido ? <b className='tooltip tooltip-top-right'>{field.error}</b> : null
@@ -35,8 +35,7 @@ const TextInput = React.createClass({
         <label data-forcedisabled={!!disabled} className={'input' + (invalido ? ' state-error' : '') + (disabled ? ' state-disabled' : '')} >
           {icone}
           <input
-            {...field}
-            {...rest}
+            {...field.input}
             type="text"
             placeholder={label}
             maxLength={this.props.maxLength}
