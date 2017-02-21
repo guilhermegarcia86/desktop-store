@@ -63,7 +63,7 @@ const GridItems = ({items}) => {
 let ItemGrid = (props) => {
 
   return (
-    <Ibox title='Itens' hasFooter={false}>
+    <Ibox hasFooter={false}>
       <fieldset>
         <div className="row">
           <section id="conteudo-grid">

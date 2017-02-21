@@ -1,16 +1,14 @@
 import React from 'react'
-import { PageHeader } from 'react-bootstrap';
-import Header from './header'
+import Cabecalho from './cabecalho'
+import SideBar from './sidebar'
 
 const Layout = React.createClass({    
 
     render(){
         return(
             <div>
-            <Header/>
-                <div id="page-wrapper" className="pager-wrapper">
-                    {this.props.children}
-                </div>
+                <Cabecalho/>
+                <SideBar/>
             </div>
         )
     }
