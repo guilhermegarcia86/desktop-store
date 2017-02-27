@@ -8,11 +8,13 @@ import appStore from '../src/reducers/store'
 import Layout from '../src/components/layout/Layout'
 import ItemCadastro from '../src/components/item-cadastro'
 import Itens from '../src/components/itens'
+import EmpresaCadastro from '../src/components/empresa/forms/empresa-cadastro'
 
 const routes = (
   <Route>
     <Route path='/' component={Layout} >
       <IndexRoute component={Itens}/>
+      <Route path='empresa/incluir' component={EmpresaCadastro} />
       <Route path='cadastro' component={ItemCadastro} />
       <Route path='pesquisar' component={Itens} />
     </Route>

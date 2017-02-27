@@ -72,6 +72,10 @@
 
 	var _itens2 = _interopRequireDefault(_itens);
 
+	var _empresaCadastro = __webpack_require__(404);
+
+	var _empresaCadastro2 = _interopRequireDefault(_empresaCadastro);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var routes = _react2.default.createElement(
@@ -81,6 +85,7 @@
 	    _reactRouter.Route,
 	    { path: '/', component: _Layout2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _itens2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'empresa/incluir', component: _empresaCadastro2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'cadastro', component: _itemCadastro2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'pesquisar', component: _itens2.default })
 	  )
@@ -49684,9 +49689,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Cabecalho = __webpack_require__(370);
+	var _Conteudo = __webpack_require__(370);
 
-	var _Cabecalho2 = _interopRequireDefault(_Cabecalho);
+	var _Conteudo2 = _interopRequireDefault(_Conteudo);
 
 	var _MenuLateral = __webpack_require__(371);
 
@@ -49704,8 +49709,25 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'wrapper' },
-	            _react2.default.createElement(_Cabecalho2.default, null),
 	            _react2.default.createElement(_MenuLateral2.default, null),
+	            _react2.default.createElement(_Conteudo2.default, null),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'main-panel' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'content' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container-fluid' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'row' },
+	                            this.props.children
+	                        )
+	                    )
+	                )
+	            ),
 	            _react2.default.createElement(_Rodape2.default, null)
 	        );
 	    }
@@ -49717,7 +49739,7 @@
 /* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -49727,148 +49749,154 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(178);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Cabecalho = _react2.default.createClass({
-		displayName: "Cabecalho",
+	var Conteudo = _react2.default.createClass({
+		displayName: 'Conteudo',
+		handleOnClick: function handleOnClick() {
+			_reactRouter.hashHistory.push('empresa/incluir');
+		},
 		render: function render() {
 
 			return _react2.default.createElement(
-				"div",
-				{ className: "main-panel" },
+				'div',
+				null,
 				_react2.default.createElement(
-					"nav",
-					{ className: "navbar navbar-transparent navbar-absolute" },
+					'nav',
+					{ className: 'navbar navbar-transparent navbar-absolute' },
 					_react2.default.createElement(
-						"div",
-						{ className: "container-fluid" },
+						'div',
+						{ className: 'container-fluid' },
 						_react2.default.createElement(
-							"div",
-							{ className: "navbar-header" },
+							'div',
+							{ className: 'collapse navbar-collapse' },
 							_react2.default.createElement(
-								"span",
-								{ className: "navbar-brand", href: "#" },
-								"Nome Empresa"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "collapse navbar-collapse" },
-							_react2.default.createElement(
-								"ul",
-								{ className: "nav navbar-nav navbar-right" },
+								'ul',
+								{ className: 'nav navbar-nav navbar-right' },
 								_react2.default.createElement(
-									"li",
+									'li',
 									null,
 									_react2.default.createElement(
-										"a",
-										{ href: "#", className: "dropdown-toggle", "data-toggle": "dropdown" },
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
 										_react2.default.createElement(
-											"i",
-											{ className: "material-icons" },
-											"dashboard"
+											'i',
+											{ className: 'material-icons' },
+											'dashboard'
 										)
 									)
 								),
 								_react2.default.createElement(
-									"li",
-									{ className: "dropdown" },
+									'li',
+									{ className: 'dropdown' },
 									_react2.default.createElement(
-										"a",
-										{ href: "#", className: "dropdown-toggle", "data-toggle": "dropdown" },
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
 										_react2.default.createElement(
-											"i",
-											{ className: "material-icons" },
-											"notifications"
+											'i',
+											{ className: 'material-icons' },
+											'notifications'
 										),
 										_react2.default.createElement(
-											"span",
-											{ className: "notification" },
-											"5"
+											'span',
+											{ className: 'notification' },
+											'5'
 										)
 									),
 									_react2.default.createElement(
-										"ul",
-										{ className: "dropdown-menu" },
+										'ul',
+										{ className: 'dropdown-menu' },
 										_react2.default.createElement(
-											"li",
+											'li',
 											null,
 											_react2.default.createElement(
-												"a",
-												{ href: "#" },
-												"Mike John responded to your email"
+												'a',
+												{ href: '#' },
+												'Mike John responded to your email'
 											)
 										),
 										_react2.default.createElement(
-											"li",
+											'li',
 											null,
 											_react2.default.createElement(
-												"a",
-												{ href: "#" },
-												"You have 5 new tasks"
+												'a',
+												{ href: '#' },
+												'You have 5 new tasks'
 											)
 										),
 										_react2.default.createElement(
-											"li",
+											'li',
 											null,
 											_react2.default.createElement(
-												"a",
-												{ href: "#" },
-												"You're now friend with Andrew"
+												'a',
+												{ href: '#' },
+												'You\'re now friend with Andrew'
 											)
 										),
 										_react2.default.createElement(
-											"li",
+											'li',
 											null,
 											_react2.default.createElement(
-												"a",
-												{ href: "#" },
-												"Another Notification"
+												'a',
+												{ href: '#' },
+												'Another Notification'
 											)
 										),
 										_react2.default.createElement(
-											"li",
+											'li',
 											null,
 											_react2.default.createElement(
-												"a",
-												{ href: "#" },
-												"Another One"
+												'a',
+												{ href: '#' },
+												'Another One'
 											)
 										)
 									)
 								),
 								_react2.default.createElement(
-									"li",
+									'li',
 									null,
 									_react2.default.createElement(
-										"a",
-										{ href: "#", className: "dropdown-toggle", "data-toggle": "dropdown" },
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
 										_react2.default.createElement(
-											"i",
-											{ className: "material-icons" },
-											"person"
+											'i',
+											{ className: 'material-icons' },
+											'person'
 										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(_reactRouter.Link, { to: '/empresa/incluir', className: 'dropdown-toggle', 'data-toggle': 'dropdown' }),
+									_react2.default.createElement(
+										'i',
+										{ className: 'material-icons' },
+										'add'
 									)
 								)
 							),
 							_react2.default.createElement(
-								"form",
-								{ className: "navbar-form navbar-right", role: "search" },
+								'form',
+								{ className: 'navbar-form navbar-right', role: 'search' },
 								_react2.default.createElement(
-									"div",
-									{ className: "form-group  is-empty" },
-									_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search" }),
-									_react2.default.createElement("span", { className: "material-input" })
+									'div',
+									{ className: 'form-group  is-empty' },
+									_react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search' }),
+									_react2.default.createElement('span', { className: 'material-input' })
 								),
 								_react2.default.createElement(
-									"button",
-									{ type: "submit", className: "btn btn-white btn-round btn-just-icon" },
+									'button',
+									{ type: 'submit', className: 'btn btn-white btn-round btn-just-icon' },
 									_react2.default.createElement(
-										"i",
-										{ className: "material-icons" },
-										"search"
+										'i',
+										{ className: 'material-icons' },
+										'search'
 									),
-									_react2.default.createElement("div", { className: "ripple-container" })
+									_react2.default.createElement('div', { className: 'ripple-container' })
 								)
 							)
 						)
@@ -49878,7 +49906,7 @@
 		}
 	});
 
-	exports.default = Cabecalho;
+	exports.default = Conteudo;
 
 /***/ },
 /* 371 */
@@ -52121,6 +52149,295 @@
 	  value: true
 	});
 	var TIPOS_PRODUTOS = exports.TIPOS_PRODUTOS = ['HQ', 'QUADRO', 'POSTER'];
+
+/***/ },
+/* 404 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reduxForm = __webpack_require__(318);
+
+	var _inputText = __webpack_require__(405);
+
+	var _inputText2 = _interopRequireDefault(_inputText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var EmpresaCadastro = _react2.default.createClass({
+	    displayName: 'EmpresaCadastro',
+	    render: function render() {
+	        var nome = this.props.fields.nome;
+
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'col-md-12' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'card' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card-header', 'data-background-color': 'purple' },
+	                    'CADASTRO DE EMPRESA'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card-content' },
+	                    _react2.default.createElement(
+	                        'form',
+	                        null,
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'row' },
+	                            _react2.default.createElement(_inputText2.default, { field: nome, label: 'Nome da empresa' }),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'col-md-3' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'form-group label-floating' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'control-label' },
+	                                        'Username'
+	                                    ),
+	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control' })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'col-md-4' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'form-group label-floating' },
+	                                    _react2.default.createElement(
+	                                        'label',
+	                                        { className: 'control-label' },
+	                                        'Username'
+	                                    ),
+	                                    _react2.default.createElement('input', { type: 'text', className: 'form-control' })
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	var fields = ['nome'];
+
+	var validate = function validate(values) {
+	    var errors = {};
+
+	    return errors;
+	};
+
+	exports.default = (0, _reduxForm.reduxForm)({
+	    form: 'EmpresaCadastro',
+	    fields: fields,
+	    validate: validate
+	})(EmpresaCadastro);
+
+/***/ },
+/* 405 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _extends2 = __webpack_require__(406);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(413);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TextInput = _react2.default.createClass({
+	    displayName: "TextInput",
+	    getDefaultProps: function getDefaultProps() {
+	        return {
+	            col: 5,
+	            required: false,
+	            maxLength: 40,
+	            disabled: false,
+	            label: null
+	        };
+	    },
+	    render: function render() {
+	        var _props = this.props,
+	            label = _props.label,
+	            field = _props.field,
+	            disabled = _props.disabled,
+	            rest = (0, _objectWithoutProperties3.default)(_props, ["label", "field", "disabled"]);
+
+
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "col-md-" + this.props.col },
+	            _react2.default.createElement(
+	                "div",
+	                { className: "form-group label-floating" },
+	                _react2.default.createElement(
+	                    "label",
+	                    { className: "control-label" },
+	                    label
+	                ),
+	                _react2.default.createElement("input", (0, _extends3.default)({}, field, rest, {
+	                    maxLength: this.props.maxLength,
+	                    disabled: this.props.disabled,
+	                    type: "text",
+	                    className: "form-control" }))
+	            )
+	        );
+	    }
+	});
+
+	TextInput.propTypes = {
+	    field: _react.PropTypes.object.isRequired
+	};
+
+	exports.default = TextInput;
+
+/***/ },
+/* 406 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _assign = __webpack_require__(407);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _assign2.default || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];
+
+	    for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }
+
+	  return target;
+	};
+
+/***/ },
+/* 407 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(408), __esModule: true };
+
+/***/ },
+/* 408 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(409);
+	module.exports = __webpack_require__(275).Object.assign;
+
+/***/ },
+/* 409 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(273);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(410)});
+
+/***/ },
+/* 410 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(294)
+	  , gOPS     = __webpack_require__(411)
+	  , pIE      = __webpack_require__(412)
+	  , toObject = __webpack_require__(310)
+	  , IObject  = __webpack_require__(297)
+	  , $assign  = Object.assign;
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(284)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
+/* 411 */
+/***/ function(module, exports) {
+
+	exports.f = Object.getOwnPropertySymbols;
+
+/***/ },
+/* 412 */
+/***/ function(module, exports) {
+
+	exports.f = {}.propertyIsEnumerable;
+
+/***/ },
+/* 413 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (obj, keys) {
+	  var target = {};
+
+	  for (var i in obj) {
+	    if (keys.indexOf(i) >= 0) continue;
+	    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+	    target[i] = obj[i];
+	  }
+
+	  return target;
+	};
 
 /***/ }
 /******/ ]);
