@@ -66,7 +66,6 @@ let Itens = React.createClass({
   },
 
   onRowClick(id) {
-    console.log('onRowClick')
     if (id) {
       const { itens } = this.props
       const item = _.find(itens, {'id': parseInt(id, 10)})
@@ -80,8 +79,6 @@ let Itens = React.createClass({
   },
 
   render(){
-
-    console.log('itens - render')
 
     const { action, item } = this.state
     const { itens } = this.props

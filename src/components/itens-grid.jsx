@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import { Row, Column, Ibox, PrimaryButton } from './utils/ui-util'
 
 const displayNone = {'display': 'none'}
 
@@ -63,7 +62,7 @@ const GridItems = ({items}) => {
 let ItemGrid = (props) => {
 
   return (
-    <Ibox hasFooter={false}>
+    <div>
       <fieldset>
         <div className="row">
           <section id="conteudo-grid">
@@ -89,11 +88,8 @@ let ItemGrid = (props) => {
         </div>
       </fieldset>
       <footer className="form-footer">
-        <PrimaryButton className='pull-right'
-                       label='Incluir'
-                       onClick={props.onAdd}/>
       </footer>
-    </Ibox>
+      </div>
   )
 }
 

@@ -1,16 +1,19 @@
 import React from 'react'
-import Cabecalho from './cabecalho'
-import SideBar from './sidebar'
+import Cabecalho from './Cabecalho'
+import MenuLateral from './MenuLateral'
+import Rodape from './Rodape'
 
-const Layout = React.createClass({    
+let Layout = React.createClass({    
 
     render(){
         return(
-            <div>
+            <div className="wrapper">                
                 <Cabecalho/>
-                <SideBar/>
+                <MenuLateral/>
+                 <Rodape />
             </div>
         )
     }
 })
+
 export default Layout

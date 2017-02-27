@@ -2,8 +2,6 @@ import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import * as Actions from '../actions/item-actions'
 import _ from 'lodash'
-import MenuItem from '../components/layout/navigation/stores/menu-item'
-import MenuItemsData from '../components/layout/navigation/stores/menu-itens.js'
 
 const item = (state = {}, action) => {
   switch(action.type){
@@ -25,7 +23,7 @@ const itens = (state = [], action) => {
 const menuItems = (state=[], action) => {
   switch (action.type) {
     case Actions.GET_EMPRESA: {
-      return MenuItem.normalizeItems(MenuItemsData)
+      return 
     }
     default: return state
   }

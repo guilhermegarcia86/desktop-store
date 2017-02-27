@@ -12,14 +12,14 @@ module.exports={
 			{
 				test: /\.js$/,
 				include: path.join(__dirname, 'src'),
-				exclude: [/node_modules/],
+				exclude: [/node_modules/, /bower_components/],
 				loader: 'eslint-loader'
 			}
 		],
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules)/,
+        exclude: [/node_modules/, /bower_components/],
         loaders: ['babel-loader']
       },
       {
