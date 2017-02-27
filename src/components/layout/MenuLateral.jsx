@@ -13,7 +13,7 @@ const MenuLateral = React.createClass({
 
 			<div className="logo">
 				<a href="http://www.creative-tim.com" className="simple-text">
-					Creative Tim
+					Logo Empresa
 				</a>
 			</div>
 

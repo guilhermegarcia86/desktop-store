@@ -49746,21 +49746,9 @@
 							"div",
 							{ className: "navbar-header" },
 							_react2.default.createElement(
-								"button",
-								{ type: "button", className: "navbar-toggle", "data-toggle": "collapse" },
-								_react2.default.createElement(
-									"span",
-									{ className: "sr-only" },
-									"Toggle navigation"
-								),
-								_react2.default.createElement("span", { className: "icon-bar" }),
-								_react2.default.createElement("span", { className: "icon-bar" }),
-								_react2.default.createElement("span", { className: "icon-bar" })
-							),
-							_react2.default.createElement(
-								"a",
+								"span",
 								{ className: "navbar-brand", href: "#" },
-								"Material Dashboard"
+								"Nome Empresa"
 							)
 						),
 						_react2.default.createElement(
@@ -49774,16 +49762,11 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										{ href: "#pablo", className: "dropdown-toggle", "data-toggle": "dropdown" },
+										{ href: "#", className: "dropdown-toggle", "data-toggle": "dropdown" },
 										_react2.default.createElement(
 											"i",
 											{ className: "material-icons" },
 											"dashboard"
-										),
-										_react2.default.createElement(
-											"p",
-											{ className: "hidden-lg hidden-md" },
-											"Dashboard"
 										)
 									)
 								),
@@ -49802,11 +49785,6 @@
 											"span",
 											{ className: "notification" },
 											"5"
-										),
-										_react2.default.createElement(
-											"p",
-											{ className: "hidden-lg hidden-md" },
-											"Notifications"
 										)
 									),
 									_react2.default.createElement(
@@ -49864,16 +49842,11 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										{ href: "#pablo", className: "dropdown-toggle", "data-toggle": "dropdown" },
+										{ href: "#", className: "dropdown-toggle", "data-toggle": "dropdown" },
 										_react2.default.createElement(
 											"i",
 											{ className: "material-icons" },
 											"person"
-										),
-										_react2.default.createElement(
-											"p",
-											{ className: "hidden-lg hidden-md" },
-											"Profile"
 										)
 									)
 								)
@@ -49935,7 +49908,7 @@
 									_react2.default.createElement(
 											"a",
 											{ href: "http://www.creative-tim.com", className: "simple-text" },
-											"Creative Tim"
+											"Logo Empresa"
 									)
 							),
 							_react2.default.createElement(
