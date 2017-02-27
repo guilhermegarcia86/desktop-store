@@ -1,7 +1,7 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router'
 
-const Conteudo = React.createClass({
+const Cabecalho = React.createClass({
 
 	handleOnClick() {
     hashHistory.push('empresa/incluir')
@@ -61,4 +61,4 @@ const Conteudo = React.createClass({
 	}
 })
 
-export default Conteudo;
+export default Cabecalho;

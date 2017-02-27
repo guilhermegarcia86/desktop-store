@@ -1,5 +1,5 @@
 import React from 'react'
-import Conteudo from './Conteudo'
+import Cabecalho from './Cabecalho'
 import MenuLateral from './MenuLateral'
 import Rodape from './Rodape'
 
@@ -9,7 +9,7 @@ let Layout = React.createClass({
         return(
             <div className="wrapper">                
                 <MenuLateral/>
-                <Conteudo/>
+                <Cabecalho/>
                 <div className="main-panel">
                     <div className="content">
                         <div className="container-fluid">

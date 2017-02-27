@@ -49689,9 +49689,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Conteudo = __webpack_require__(370);
+	var _Cabecalho = __webpack_require__(414);
 
-	var _Conteudo2 = _interopRequireDefault(_Conteudo);
+	var _Cabecalho2 = _interopRequireDefault(_Cabecalho);
 
 	var _MenuLateral = __webpack_require__(371);
 
@@ -49710,7 +49710,7 @@
 	            'div',
 	            { className: 'wrapper' },
 	            _react2.default.createElement(_MenuLateral2.default, null),
-	            _react2.default.createElement(_Conteudo2.default, null),
+	            _react2.default.createElement(_Cabecalho2.default, null),
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'main-panel' },
@@ -49736,179 +49736,7 @@
 	exports.default = Layout;
 
 /***/ },
-/* 370 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(178);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Conteudo = _react2.default.createClass({
-		displayName: 'Conteudo',
-		handleOnClick: function handleOnClick() {
-			_reactRouter.hashHistory.push('empresa/incluir');
-		},
-		render: function render() {
-
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'nav',
-					{ className: 'navbar navbar-transparent navbar-absolute' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'container-fluid' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'collapse navbar-collapse' },
-							_react2.default.createElement(
-								'ul',
-								{ className: 'nav navbar-nav navbar-right' },
-								_react2.default.createElement(
-									'li',
-									null,
-									_react2.default.createElement(
-										'a',
-										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
-										_react2.default.createElement(
-											'i',
-											{ className: 'material-icons' },
-											'dashboard'
-										)
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									{ className: 'dropdown' },
-									_react2.default.createElement(
-										'a',
-										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
-										_react2.default.createElement(
-											'i',
-											{ className: 'material-icons' },
-											'notifications'
-										),
-										_react2.default.createElement(
-											'span',
-											{ className: 'notification' },
-											'5'
-										)
-									),
-									_react2.default.createElement(
-										'ul',
-										{ className: 'dropdown-menu' },
-										_react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '#' },
-												'Mike John responded to your email'
-											)
-										),
-										_react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '#' },
-												'You have 5 new tasks'
-											)
-										),
-										_react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '#' },
-												'You\'re now friend with Andrew'
-											)
-										),
-										_react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '#' },
-												'Another Notification'
-											)
-										),
-										_react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '#' },
-												'Another One'
-											)
-										)
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									null,
-									_react2.default.createElement(
-										'a',
-										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
-										_react2.default.createElement(
-											'i',
-											{ className: 'material-icons' },
-											'person'
-										)
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									null,
-									_react2.default.createElement(_reactRouter.Link, { to: '/empresa/incluir', className: 'dropdown-toggle', 'data-toggle': 'dropdown' }),
-									_react2.default.createElement(
-										'i',
-										{ className: 'material-icons' },
-										'add'
-									)
-								)
-							),
-							_react2.default.createElement(
-								'form',
-								{ className: 'navbar-form navbar-right', role: 'search' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'form-group  is-empty' },
-									_react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search' }),
-									_react2.default.createElement('span', { className: 'material-input' })
-								),
-								_react2.default.createElement(
-									'button',
-									{ type: 'submit', className: 'btn btn-white btn-round btn-just-icon' },
-									_react2.default.createElement(
-										'i',
-										{ className: 'material-icons' },
-										'search'
-									),
-									_react2.default.createElement('div', { className: 'ripple-container' })
-								)
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-
-	exports.default = Conteudo;
-
-/***/ },
+/* 370 */,
 /* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -52438,6 +52266,179 @@
 
 	  return target;
 	};
+
+/***/ },
+/* 414 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(178);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Cabecalho = _react2.default.createClass({
+		displayName: 'Cabecalho',
+		handleOnClick: function handleOnClick() {
+			_reactRouter.hashHistory.push('empresa/incluir');
+		},
+		render: function render() {
+
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'nav',
+					{ className: 'navbar navbar-transparent navbar-absolute' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'container-fluid' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'collapse navbar-collapse' },
+							_react2.default.createElement(
+								'ul',
+								{ className: 'nav navbar-nav navbar-right' },
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
+										_react2.default.createElement(
+											'i',
+											{ className: 'material-icons' },
+											'dashboard'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									{ className: 'dropdown' },
+									_react2.default.createElement(
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
+										_react2.default.createElement(
+											'i',
+											{ className: 'material-icons' },
+											'notifications'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'notification' },
+											'5'
+										)
+									),
+									_react2.default.createElement(
+										'ul',
+										{ className: 'dropdown-menu' },
+										_react2.default.createElement(
+											'li',
+											null,
+											_react2.default.createElement(
+												'a',
+												{ href: '#' },
+												'Mike John responded to your email'
+											)
+										),
+										_react2.default.createElement(
+											'li',
+											null,
+											_react2.default.createElement(
+												'a',
+												{ href: '#' },
+												'You have 5 new tasks'
+											)
+										),
+										_react2.default.createElement(
+											'li',
+											null,
+											_react2.default.createElement(
+												'a',
+												{ href: '#' },
+												'You\'re now friend with Andrew'
+											)
+										),
+										_react2.default.createElement(
+											'li',
+											null,
+											_react2.default.createElement(
+												'a',
+												{ href: '#' },
+												'Another Notification'
+											)
+										),
+										_react2.default.createElement(
+											'li',
+											null,
+											_react2.default.createElement(
+												'a',
+												{ href: '#' },
+												'Another One'
+											)
+										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ href: '#', className: 'dropdown-toggle', 'data-toggle': 'dropdown' },
+										_react2.default.createElement(
+											'i',
+											{ className: 'material-icons' },
+											'person'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(_reactRouter.Link, { to: '/empresa/incluir', className: 'dropdown-toggle', 'data-toggle': 'dropdown' }),
+									_react2.default.createElement(
+										'i',
+										{ className: 'material-icons' },
+										'add'
+									)
+								)
+							),
+							_react2.default.createElement(
+								'form',
+								{ className: 'navbar-form navbar-right', role: 'search' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'form-group  is-empty' },
+									_react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search' }),
+									_react2.default.createElement('span', { className: 'material-input' })
+								),
+								_react2.default.createElement(
+									'button',
+									{ type: 'submit', className: 'btn btn-white btn-round btn-just-icon' },
+									_react2.default.createElement(
+										'i',
+										{ className: 'material-icons' },
+										'search'
+									),
+									_react2.default.createElement('div', { className: 'ripple-container' })
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+
+	exports.default = Cabecalho;
 
 /***/ }
 /******/ ]);
