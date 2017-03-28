@@ -13,10 +13,10 @@ const TextInput = React.createClass({
   },
 
     render(){
-        const { label, field, disabled, ...rest } = this.props;
+        const { label, field, disabled, col, ...rest } = this.props;
 
         return(
-            <div className={`col-md-${this.props.col}`}>
+            <div className={`col-md-${col}`}>
                 <div className="form-group label-floating">
                     <label className="control-label">{label}</label>
                     <input 
@@ -32,9 +32,5 @@ const TextInput = React.createClass({
     }
 
 })
-
-TextInput.propTypes = {
-  field: PropTypes.object.isRequired
-}
 
 export default TextInput;

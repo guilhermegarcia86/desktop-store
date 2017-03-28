@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Route, Router, Redirect, hashHistory, IndexRoute } from 'react-router'
 import { Provider } from 'react-redux'
-
 import appStore from '../src/reducers/store'
 
 import Layout from '../src/components/layout/Layout'
@@ -13,10 +12,10 @@ import EmpresaCadastro from '../src/components/empresa/forms/empresa-cadastro'
 const routes = (
   <Route>
     <Route path='/' component={Layout} >
-      <IndexRoute component={Itens}/>
+      {/*<Redirect from='/' to='/empresa/incluir'/>
       <Route path='empresa/incluir' component={EmpresaCadastro} />
       <Route path='cadastro' component={ItemCadastro} />
-      <Route path='pesquisar' component={Itens} />
+      <Route path='pesquisar' component={Itens} />*/}
     </Route>
   </Route>
 )

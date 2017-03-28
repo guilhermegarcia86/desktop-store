@@ -2,25 +2,16 @@ import React from 'react'
 import Cabecalho from './Cabecalho'
 import MenuLateral from './MenuLateral'
 import Rodape from './Rodape'
+import DatePicker from '../../assets/js/material.datepicker.js'
 
-let Layout = React.createClass({    
+let Layout = React.createClass({   
 
     render(){
         return(
-            <div className="wrapper">                
-                <MenuLateral/>
+            <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
                 <Cabecalho/>
-                <div className="main-panel">
-                    <div className="content">
-                        <div className="container-fluid">
-                            <div className="row">
-                                {this.props.children}
-                            </div>
-                        </div>
-                    </div> 
-                </div> 
-                <Rodape />
-            </div>
+                <MenuLateral/>
+            </div>       
         )
     }
 })

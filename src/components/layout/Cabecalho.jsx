@@ -10,53 +10,29 @@ const Cabecalho = React.createClass({
 	render() {
 
 		return (
-			<div>
-				<nav className="navbar navbar-transparent navbar-absolute">
-					<div className="container-fluid">
-						<div className="collapse navbar-collapse">
-							<ul className="nav navbar-nav navbar-right">
-								<li>
-									<a href="#" className="dropdown-toggle" data-toggle="dropdown">
-										<i className="material-icons">dashboard</i>
-									</a>
-								</li>
-								<li className="dropdown">
-									<a href="#" className="dropdown-toggle" data-toggle="dropdown">
-										<i className="material-icons">notifications</i>
-										<span className="notification">5</span>
-									</a>
-									<ul className="dropdown-menu">
-										<li><a href="#">Mike John responded to your email</a></li>
-										<li><a href="#">You have 5 new tasks</a></li>
-										<li><a href="#">You're now friend with Andrew</a></li>
-										<li><a href="#">Another Notification</a></li>
-										<li><a href="#">Another One</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#" className="dropdown-toggle" data-toggle="dropdown">
-									<i className="material-icons">person</i>
-									</a>
-								</li>
-								<li>
-									<Link to={`/empresa/incluir`} className="dropdown-toggle" data-toggle="dropdown"></Link>
-									<i className="material-icons">add</i>
-								</li>
-							</ul>
-
-							<form className="navbar-form navbar-right" role="search">
-								<div className="form-group  is-empty">
-									<input type="text" className="form-control" placeholder="Search"/>
-									<span className="material-input"></span>
-								</div>
-								<button type="submit" className="btn btn-white btn-round btn-just-icon">
-									<i className="material-icons">search</i><div className="ripple-container"></div>
-								</button>
-							</form>
-						</div>
+			<header className="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+				<div className="mdl-layout__header-row">
+				<span className="mdl-layout-title">Home</span>
+				<div className="mdl-layout-spacer"></div>
+				<div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+					<label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search">
+					<i className="material-icons">search</i>
+					</label>
+					<div className="mdl-textfield__expandable-holder">
+					<input className="mdl-textfield__input" type="text" id="search"/>
+					<label className="mdl-textfield__label" htmlFor="search">Enter your query...</label>
 					</div>
-				</nav>   
-			</div>
+				</div>
+				<button className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+					<i className="material-icons">more_vert</i>
+				</button>
+				<ul className="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" htmlFor="hdrbtn">
+					<li className="mdl-menu__item">About</li>
+					<li className="mdl-menu__item">Contact</li>
+					<li className="mdl-menu__item">Legal information</li>
+				</ul>
+				</div>
+      </header>
 		)
 	}
 })

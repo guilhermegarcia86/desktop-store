@@ -1,36 +1,39 @@
-const path = require('path')
+const path = require('path'),
+      webpack = require('webpack')
+
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
   , BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports={
-  entry:'./src/index.jsx',
+  entry: {
+		master: './src/main.jsx'
+  },
   output:{
-    filename:'./bundle.js'
+    filename:'./[name].js'
   },
   module: {
     preLoaders: [
 			{
 				test: /\.js$/,
 				include: path.join(__dirname, 'src'),
-				exclude: [/node_modules/, /bower_components/],
+				exclude: [/node_modules/],
 				loader: 'eslint-loader'
 			}
 		],
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: [/node_modules/, /bower_components/],
+        exclude: [/node_modules/],
         loaders: ['babel-loader']
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
     ]
   },
 	resolve: {
 		extensions: ['', '.js', '.jsx']
 	},
+  externals: {
+      "jQuery": "jQuery"
+  },
   eslint: {
 		configFile: '.eslintrc'
 	},
