@@ -10,29 +10,30 @@ const Cabecalho = React.createClass({
 	render() {
 
 		return (
-			<header className="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-				<div className="mdl-layout__header-row">
-				<span className="mdl-layout-title">Home</span>
-				<div className="mdl-layout-spacer"></div>
-				<div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-					<label className="mdl-button mdl-js-button mdl-button--icon" htmlFor="search">
-					<i className="material-icons">search</i>
-					</label>
-					<div className="mdl-textfield__expandable-holder">
-					<input className="mdl-textfield__input" type="text" id="search"/>
-					<label className="mdl-textfield__label" htmlFor="search">Enter your query...</label>
-					</div>
+			<div className="sidebar" data-color="purple" >
+				
+					{/*Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+					Tip 2: you can also add an image using data-image tag*/}
+				
+
+				<div className="logo">
+					<a href="http://www.creative-tim.com" className="simple-text">
+						Creative Tim
+					</a>
 				</div>
-				<button className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
-					<i className="material-icons">more_vert</i>
-				</button>
-				<ul className="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" htmlFor="hdrbtn">
-					<li className="mdl-menu__item">About</li>
-					<li className="mdl-menu__item">Contact</li>
-					<li className="mdl-menu__item">Legal information</li>
-				</ul>
+
+				<div className="sidebar-wrapper">
+					<ul className="nav">
+						<li className="active">
+							<a href="dashboard.html">
+								<i className="material-icons">dashboard</i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+					</ul>
 				</div>
-      </header>
+			</div>
 		)
 	}
 })

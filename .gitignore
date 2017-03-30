@@ -1,3 +1,5 @@
 node_modules
-data
+data/
 *.exe
+1../
+npm-debug.log

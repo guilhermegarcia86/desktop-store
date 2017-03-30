@@ -1,6 +1,8 @@
 import React from 'react'
 import { reduxForm, Field } from 'redux-form';
 import TextInput from '../../form-utils/input-text'
+import DateInput from '../../form-utils/date-input'
+import CnpjInput from '../../form-utils/cnpj-input'
 
 const EmpresaCadastro = React.createClass({
 
@@ -16,8 +18,19 @@ const EmpresaCadastro = React.createClass({
                 <div className="card-content">
                     <form>
                         <div className="row">
-                            <TextInput field={nome} label="Nome da empresa" />
+                            <TextInput field={nome} label="Nome Fantasia" />
+                            <TextInput field={nome} label="Razão Social" />
                         </div>
+                        <div className="row">
+                            <CnpjInput field={nome} label="CNPJ" />
+                            <TextInput field={nome} label="Email" />
+                        </div>
+                        <div className="row">
+                            <DateInput field={dataCadastro} label="Data Criação" />
+                        </div>
+
+                        <button type="submit" className="btn btn-primary pull-right">Update Profile</button>
+                        <div className="clearfix"></div>
                     </form>
                 </div>
             </div>

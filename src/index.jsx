@@ -12,10 +12,10 @@ import EmpresaCadastro from '../src/components/empresa/forms/empresa-cadastro'
 const routes = (
   <Route>
     <Route path='/' component={Layout} >
-      {/*<Redirect from='/' to='/empresa/incluir'/>
+      <Redirect from='/' to='/empresa/incluir'/>
       <Route path='empresa/incluir' component={EmpresaCadastro} />
       <Route path='cadastro' component={ItemCadastro} />
-      <Route path='pesquisar' component={Itens} />*/}
+      <Route path='pesquisar' component={Itens} />
     </Route>
   </Route>
 )

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 const TextInput = React.createClass({
     
@@ -9,6 +9,7 @@ const TextInput = React.createClass({
         maxLength: 40,
         disabled: false,
         label: null,
+        type: "text"
       }
   },
 
@@ -24,7 +25,7 @@ const TextInput = React.createClass({
                         {...rest}
                         maxLength={this.props.maxLength}
                         disabled={this.props.disabled}
-                        type="text" 
+                        type={this.props.type} 
                         className="form-control" />
                 </div>
             </div>
