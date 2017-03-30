@@ -1,13 +1,27 @@
 import React from 'react'
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import TextInput from '../../form-utils/input-text'
 import DateInput from '../../form-utils/date-input'
 import CnpjInput from '../../form-utils/cnpj-input'
+import EmailInput from '../../form-utils/email-input'
+import {Row, SaveButton} from '../../utils/ui-utils'
+import Ajax from '../../utils/ajax'
 
 const EmpresaCadastro = React.createClass({
 
+    success() {
+        //Por enquanto não faz nada
+     },
+
+    submit(values, dispatch) {
+
+        return new Promise((resolve, reject) => {
+            Ajax.post('empresa/criar', values, this.success, resolve, reject)
+        })
+    },
+
     render(){
-        const { fields: { nome, dataCadastro }} = this.props
+        const { handleSubmit, fields: { nome, dataCadastro }} = this.props
 
         return (
         <div className="col-md-12">
@@ -16,21 +30,21 @@ const EmpresaCadastro = React.createClass({
                     CADASTRO DE EMPRESA
                 </div>
                 <div className="card-content">
-                    <form>
-                        <div className="row">
+                    <form
+                        onSubmit={handleSubmit(this.submit)}>
+                        <Row>
                             <TextInput field={nome} label="Nome Fantasia" />
                             <TextInput field={nome} label="Razão Social" />
-                        </div>
-                        <div className="row">
+                        </Row>
+                        <Row>
                             <CnpjInput field={nome} label="CNPJ" />
-                            <TextInput field={nome} label="Email" />
-                        </div>
-                        <div className="row">
+                            <EmailInput field={nome} label="Email" />
+                        </Row>
+                        <Row>
                             <DateInput field={dataCadastro} label="Data Criação" />
-                        </div>
+                        </Row>
 
-                        <button type="submit" className="btn btn-primary pull-right">Update Profile</button>
-                        <div className="clearfix"></div>
+                        <SaveButton />
                     </form>
                 </div>
             </div>

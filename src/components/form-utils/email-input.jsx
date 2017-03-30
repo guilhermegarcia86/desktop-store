@@ -40,4 +40,4 @@ const EmailInput = React.createClass({
 
 })
 
-export default TextInput;
+export default EmailInput;
